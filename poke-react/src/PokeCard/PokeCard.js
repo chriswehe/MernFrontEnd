@@ -5,7 +5,7 @@ const StyledCardArticle = styled.article`
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    padding: 5px;
+    padding: 20px;
 `
 
 const StyledCardImage = styled.img`
@@ -13,6 +13,14 @@ const StyledCardImage = styled.img`
     width: auto;
     text-decoration: none;
 `
+
+const StyledInfoSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+`
+
 const StyledInfoKeys = styled.span`
     font-weight: bolder;
 `
@@ -26,15 +34,15 @@ export default class PokeCard extends Component {
             <div>
                 <StyledCardArticle>
                     <StyledCardImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
-                    <section>
+                    <StyledInfoSection>
                         <h2>{pokeCard.name}</h2>
-                        <ul>
+                        <section>
                             <p><StyledInfoKeys>{"Number: "}</StyledInfoKeys>{pokeCard.number}</p>
                             <p><StyledInfoKeys>{"Type: "}</StyledInfoKeys>{pokeCard.supertype}</p>
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
-                        </ul>
-                    </section>
+                        </section>
+                    </StyledInfoSection>
                 </StyledCardArticle>
             </div>
         )
