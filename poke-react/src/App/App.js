@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Link } from "react-router-dom";
 import PokeCardList from '../PokeCardList/PokeCardList'
 import PokeCard from '../PokeCard/PokeCard'
+import CreatePokeCard from '../CreatePokeCard/CreatePokeCard'
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
@@ -4056,10 +4057,15 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <header className="App-header">
+        <nav className="App-navBar">
           <Link to="/">{"Poke Cards"}</Link>
-        </header>
+          <Link to="/createPokeCard/">{"Create New Card"}</Link>
+        </nav>
         <main>
+          <Route
+          path="/createPokeCard/"
+          render={props => <CreatePokeCard {...props}/>}
+          />
           <Route
             path="/"
             exact
