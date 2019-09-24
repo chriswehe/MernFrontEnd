@@ -4,14 +4,35 @@ import styled from 'styled-components';
 import PokeCardList from '../PokeCardList/PokeCardList'
 import PokeCard from '../PokeCard/PokeCard'
 import CreatePokeCard from '../CreatePokeCard/CreatePokeCard'
+import PokemonTcgLogo from '../Assets/pokemonTcgLogo.png';
+
+const StyledTcgLogoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+`
+const StyledTcgLogo = styled.img`
+  display: block;
+  max-height: 200px;
+  width: auto;
+`
 
 const StyledNav = styled.nav`
-  background-color: #4d4d4d;
+  align-items: center;
   display: flex;
   height: 100px;
-  font-size: 30px;
+  font-size: 50px;
   justify-content: space-around;
+  text-shadow: 2px 2px 4px #000000;
+`
+const StyledFooter = styled.footer`
   align-items: center;
+  color: white;
+  display: flex;
+  height: 100px;
+  font-size: 10px;
+  font-weight: lighter;
+  justify-content: space-around;
   text-shadow: 2px 2px 4px #000000;
 `
 
@@ -38,6 +59,9 @@ class App extends Component {
   render () {
     return (
       <div className="App">
+        <StyledTcgLogoContainer>
+          <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
+        </StyledTcgLogoContainer>
         <StyledNav className="App-navBar">
           <Link to="/">{"Poke Cards"}</Link>
           <Link to="/createPokeCard/">{"Create New Card"}</Link>
@@ -56,7 +80,10 @@ class App extends Component {
             path="/pokeCard/:name"
             render={props => <PokeCard {...props} {...this.state}/>}
           />
-        </main>  
+        </main> 
+        <StyledFooter>
+          <h1>{"Created by Chris Wehe and George Caras"}</h1>
+        </StyledFooter> 
       </div>
     );
   }

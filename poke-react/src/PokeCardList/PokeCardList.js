@@ -7,6 +7,7 @@ const StyledDiv = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   margin: 0 auto;
+  padding: 10px;
 `
 
 const StyledCardListImage = styled.img`
