@@ -12,11 +12,7 @@ const StyledNav = styled.nav`
   font-size: 30px;
   justify-content: space-around;
   align-items: center;
-`
-const StyledMain = styled.main`
-  display: flex;
-  justify-content: center;
-  margin: 0 auto;
+  text-shadow: 2px 2px 4px #000000;
 `
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";

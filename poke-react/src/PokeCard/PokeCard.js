@@ -5,13 +5,16 @@ const StyledCardArticle = styled.article`
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    max-width: 600px;
     padding: 20px;
 `
 
 const StyledCardImage = styled.img`
+    box-shadow: 10px 10px 5px grey;
     max-height: 500px;
-    width: auto;
+    margin: 10px;
     text-decoration: none;
+    width: auto;
 `
 
 const StyledInfoSection = styled.section`
@@ -31,7 +34,7 @@ export default class PokeCard extends Component {
         const pokeCard = this.props.pokeCards.find(pokeCard => pokeCard.name === pokeName);
 
         return (
-            <div>
+            <div className="Card">
                 <StyledCardArticle>
                     <StyledCardImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
                     <StyledInfoSection>
