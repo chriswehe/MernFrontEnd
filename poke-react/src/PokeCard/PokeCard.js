@@ -1,4 +1,21 @@
 import React, { Component } from 'react'
+import styled from 'styled-components';
+
+const StyledCardArticle = styled.article`
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 5px;
+`
+
+const StyledCardImage = styled.img`
+    max-height: 500px;
+    width: auto;
+    text-decoration: none;
+`
+const StyledInfoKeys = styled.span`
+    font-weight: bolder;
+`
 
 export default class PokeCard extends Component {
     render() {
@@ -7,8 +24,18 @@ export default class PokeCard extends Component {
 
         return (
             <div>
-                <img src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
-                <h2>{pokeCard.name}</h2>
+                <StyledCardArticle>
+                    <StyledCardImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
+                    <section>
+                        <h2>{pokeCard.name}</h2>
+                        <ul>
+                            <p><StyledInfoKeys>{"Number: "}</StyledInfoKeys>{pokeCard.number}</p>
+                            <p><StyledInfoKeys>{"Type: "}</StyledInfoKeys>{pokeCard.supertype}</p>
+                            <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
+                            <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
+                        </ul>
+                    </section>
+                </StyledCardArticle>
             </div>
         )
     }
