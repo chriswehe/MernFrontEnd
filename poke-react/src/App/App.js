@@ -1,9 +1,13 @@
+//Import Dependencies
 import React, { Component } from 'react';
 import { Route, Link } from "react-router-dom";
 import styled from 'styled-components';
+//Import Components 
 import PokeCardList from '../PokeCardList/PokeCardList'
 import PokeCard from '../PokeCard/PokeCard'
 import CreatePokeCard from '../CreatePokeCard/CreatePokeCard'
+import EditPokeCard from '../EditPokeCard/EditPokeCard'
+//Import Assets
 import PokemonTcgLogo from '../Assets/pokemonTcgLogo.png';
 
 const StyledTcgLogo = styled.img`
@@ -67,8 +71,8 @@ class App extends Component {
         </StyledNav>
         <main>
           <Route
-          path="/createPokeCard/"
-          render={props => <CreatePokeCard {...props}/>}
+            path="/createPokeCard/"
+            render={props => <CreatePokeCard {...props}/>}
           />
           <Route
             path="/"
@@ -78,6 +82,10 @@ class App extends Component {
           <Route 
             path="/pokeCard/:name"
             render={props => <PokeCard {...props} {...this.state}/>}
+          />
+          <Route
+            path="/pokeCard/:name/editPokeCard/"
+            render={props => <EditPokeCard {...props} {...this.state}/>}
           />
         </main> 
       </div>

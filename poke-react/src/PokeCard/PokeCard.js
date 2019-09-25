@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
 
+const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
+
 const StyledCardArticle = styled.article`
     background-color: black;
     border: 7px solid #F9D31C;
@@ -35,6 +37,38 @@ const StyledInfoKeys = styled.span`
 `
 
 export default class PokeCard extends Component {
+    constructor(props){
+        super(props)
+        this.state ={
+            name: this.props.match.params.name
+        }
+        this.deleteCard = this.deleteCard.bind(this)
+    }
+    
+    deleteCard() {
+        fetch(pokeURL + this.props.match.params.name, {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+                "Connection": "keep-alive",
+                "Cache-Control": "no-cache",
+                "Accept": "*/*",
+                "Host": "kanto-unown-01999.herokuapp.com"
+            },
+        }).then(res => console.log(res))
+        .catch(err => console.log(err));
+    };
+
+    componentDidMount() {
+        fetch(pokeURL)
+          .then( response => response.json()
+          .then( (parsedJson) => {
+            this.setState({
+              pokeCards: parsedJson
+            })
+          }))
+    }
+
     render() {
         const pokeName = this.props.match.params.name;
         const pokeCard = this.props.pokeCards.find(pokeCard => pokeCard.name === pokeName);
@@ -51,6 +85,7 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
+                        <button onClick={this.deleteCard}>Delete Card</button>
                     </StyledInfoSection>
                 </StyledCardArticle>
             </div>
