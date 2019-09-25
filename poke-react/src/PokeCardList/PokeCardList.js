@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `
 
 const StyledCardListImage = styled.img`
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 10px 5px black;
     max-height: 400px;
     margin: 10px;
     text-decoration: none;

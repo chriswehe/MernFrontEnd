@@ -10,7 +10,7 @@ const StyledCardArticle = styled.article`
 `
 
 const StyledCardImage = styled.img`
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 10px 10px 5px black;
     max-height: 500px;
     margin: 10px;
     text-decoration: none;
@@ -18,10 +18,12 @@ const StyledCardImage = styled.img`
 `
 
 const StyledInfoSection = styled.section`
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
+    text-shadow: 2px 2px 4px #000000;
 `
 
 const StyledInfoKeys = styled.span`
