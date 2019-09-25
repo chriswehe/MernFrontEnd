@@ -14,7 +14,7 @@ const StyledCardArticle = styled.article`
 `
 
 const StyledCardImage = styled.img`
-    box-shadow: 10px 10px 5px darkgray;
+    box-shadow: 10px 10px 5px #3359A5;
     max-height: 500px;
     margin: 10px;
     text-decoration: none;
@@ -27,6 +27,7 @@ const StyledInfoSection = styled.section`
     flex-direction: column;
     font-size: 30px;
     justify-content: center;
+    align-items: center;
     margin: 0 auto;
     padding: 10px;
     text-shadow: 5px 1px 4px #3359A5;
@@ -35,6 +36,16 @@ const StyledInfoSection = styled.section`
 
 const StyledInfoKeys = styled.span`
     font-weight: bolder;
+`
+
+const StyledChangeKeys = styled.section`
+    background-color: #E1152B;
+    border: 4px solid #3359A5;
+    color: white;
+    font-weight: bolder;
+    margin: 10px;
+    width: 250px;
+    text-shadow: 3px 1px 4px #darkgray;
 `
 
 
@@ -89,10 +100,10 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
                         <Link to="/">
-                            <StyledInfoKeys onClick={this.deleteCard}>Delete Card</StyledInfoKeys>
+                            <StyledChangeKeys onClick={this.deleteCard}>Delete Card</StyledChangeKeys>
                         </Link>
                         <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>
-                            <StyledInfoKeys>Edit Pokémon</StyledInfoKeys>
+                            <StyledChangeKeys>Edit Pokémon</StyledChangeKeys>
                         </Link>
                     </StyledInfoSection>
                 </StyledCardArticle>
