@@ -19,14 +19,17 @@ const StyledTcgLogo = styled.img`
 
 const StyledNav = styled.nav`
   background: black;
-  border: 7px solid #F9D31C;
+  border-bottom: 2px solid #F9D31C;
   align-items: center;
   display: flex;
   height: 115px;
   font-size: 25px;
   justify-content: space-between;
   padding: 0 50px;
-  text-shadow: 5px 2px #3359A5;
+  text-shadow: 3px 2px #3359A5;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 `
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";

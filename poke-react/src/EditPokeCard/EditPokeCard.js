@@ -21,7 +21,7 @@ const StyledHeader = styled.h1`
     display: flex;
     font-size: 30px;
     justify-content: space-between;
-    padding: 0 50px;
+    
     text-align: center;
     text-shadow: 5px 2px #3359A5;
 `
@@ -29,24 +29,31 @@ const StyledHeader = styled.h1`
 const StyledForm = styled.form`
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     width: 70%;
 `
 
 const StyledInput = styled.input`
+    width: 50%;
+    border: 2px solid #F9D31C;
     margin: 10px;
 `
 
 const StyledUpdateClick = styled.div`
-    color: #F9D31C;
-    display: flex;
-    flex-direction: column;
-    font-size: 30px;
-    justify-content: center;
-    margin: 0 auto;
-    padding: 10px;
-    text-shadow: 5px 1px 4px #3359A5;
+    background: rgb(161,161,161);
+    background: linear-gradient(180deg, 
+                rgba(161,161,161,1) 0%, 
+                rgba(225,21,43,1) 0%, 
+                rgba(149,22,33,1) 53%);
+    border: 4px solid #262952;
+    color: white;
+    font-weight: bolder;
+    margin: 10px;
+    padding: 3px;
+    width: 100px;
     text-align: center;
+    text-shadow: 1px 1px 1px black;
 `
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
@@ -172,7 +179,7 @@ export default class EditPokeCard extends Component {
                         value={this.state.rarity}
                         onChange={this.handleValueChange}
                         />
-                        <Link to={"/pokeCard/"+this.state.name}>
+                        <Link to={"/"}>
                             <StyledUpdateClick onClick={this.updateCard}>
                                 Submit
                             </StyledUpdateClick>

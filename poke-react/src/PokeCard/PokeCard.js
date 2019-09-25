@@ -9,8 +9,8 @@ const StyledCardArticle = styled.article`
     justify-content: center;
     margin: 0 auto;
     margin-top: 100px;
-    max-width: 700px;
-    padding: 40px;
+    max-width: 800px;
+    padding: 20px;
 `
 
 const StyledCardImage = styled.img`
@@ -22,7 +22,7 @@ const StyledCardImage = styled.img`
 `
 
 const StyledInfoSection = styled.section`
-    color: #F9D31C;
+    color: white;
     display: flex;
     flex-direction: column;
     font-size: 30px;
@@ -35,17 +35,24 @@ const StyledInfoSection = styled.section`
 `
 
 const StyledInfoKeys = styled.span`
+    color: #F9D31C;
     font-weight: bolder;
 `
 
 const StyledChangeKeys = styled.section`
-    background-color: #E1152B;
-    border: 4px solid #3359A5;
+    background: rgb(161,161,161);
+    background: linear-gradient(180deg, 
+                rgba(161,161,161,1) 0%, 
+                rgba(225,21,43,1) 0%, 
+                rgba(149,22,33,1) 53%);
+    border: 4px solid #262952;
     color: white;
     font-weight: bolder;
     margin: 10px;
+    padding: 3px;
     width: 250px;
-    text-shadow: 3px 1px 4px #darkgray;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
 `
 
 
@@ -93,7 +100,7 @@ export default class PokeCard extends Component {
                     <StyledCardImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
                     <StyledInfoSection>
                         <section>
-                            <h2>{pokeCard.name}</h2>
+                            <p><StyledInfoKeys>{"Name: "}</StyledInfoKeys>{pokeCard.name}</p>
                             <p><StyledInfoKeys>{"Number: "}</StyledInfoKeys>{pokeCard.number}</p>
                             <p><StyledInfoKeys>{"Type: "}</StyledInfoKeys>{pokeCard.supertype}</p>
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
@@ -103,7 +110,7 @@ export default class PokeCard extends Component {
                             <StyledChangeKeys onClick={this.deleteCard}>Delete Card</StyledChangeKeys>
                         </Link>
                         <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>
-                            <StyledChangeKeys>Edit Pokémon</StyledChangeKeys>
+                            <StyledChangeKeys>Edit Card</StyledChangeKeys>
                         </Link>
                     </StyledInfoSection>
                 </StyledCardArticle>
