@@ -11,8 +11,10 @@ const StyledTcgLogoContainer = styled.div`
   justify-content: center;
   padding-top: 20px;
 `
+
 const StyledTcgLogo = styled.img`
   display: block;
+  margin-top: 50px;
   max-height: 200px;
   width: auto;
 `
@@ -20,11 +22,13 @@ const StyledTcgLogo = styled.img`
 const StyledNav = styled.nav`
   align-items: center;
   display: flex;
-  height: 100px;
+  height: 200px;
   font-size: 50px;
   justify-content: space-around;
+  margin: 0 10%;
   text-shadow: 2px 2px 4px #000000;
 `
+
 const StyledFooter = styled.footer`
   align-items: center;
   color: white;
@@ -63,7 +67,7 @@ class App extends Component {
           <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
         </StyledTcgLogoContainer>
         <StyledNav className="App-navBar">
-          <Link to="/">{"Poke Cards"}</Link>
+          <Link to="/">{"Pokemon Cards"}</Link>
           <Link to="/createPokeCard/">{"Create New Card"}</Link>
         </StyledNav>
         <main>

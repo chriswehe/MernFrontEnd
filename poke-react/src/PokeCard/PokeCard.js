@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const StyledCardArticle = styled.article`
+    background-color: white;
+    border: 7px solid black;
     display: flex;
     justify-content: center;
     margin: 0 auto;
@@ -18,12 +20,12 @@ const StyledCardImage = styled.img`
 `
 
 const StyledInfoSection = styled.section`
-    color: white;
+    color: black;
     display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 0 auto;
-    text-shadow: 2px 2px 4px #000000;
+    text-shadow: 2px 2px 4px grey;
 `
 
 const StyledInfoKeys = styled.span`

@@ -6,11 +6,8 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import styled from 'styled-components';
 
 const BackgroundStyle = styled.div`
-background: rgb(54,54,54);
-background: linear-gradient(180deg, 
-            rgba(54,54,54,1) 0%, 
-            rgba(140,140,140,1) 23%, 
-            rgba(224,224,224,1) 100%);
+background: rgb(62,62,62);
+background: linear-gradient(180deg, rgba(62,62,62,1) 0%, rgba(111,111,111,1) 50%, rgba(161,161,161,1) 100%);
 `
 
 ReactDOM.render(
