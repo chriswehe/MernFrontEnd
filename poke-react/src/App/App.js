@@ -81,6 +81,7 @@ class App extends Component {
           />
           <Route 
             path="/pokeCard/:name"
+            exact
             render={props => <PokeCard {...props} {...this.state}/>}
           />
           <Route
