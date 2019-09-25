@@ -23,7 +23,7 @@ const StyledHeader = styled.h1`
     justify-content: space-between;
     
     text-align: center;
-    text-shadow: 5px 2px #3359A5;
+    text-shadow: 3px 2px #3359A5;
 `
 
 const StyledForm = styled.form`
