@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
-const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
-
 const StyledCardArticle = styled.article`
     background-color: black;
     border: 7px solid #F9D31C;
@@ -37,13 +35,25 @@ const StyledInfoKeys = styled.span`
     font-weight: bolder;
 `
 
+const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
+
 export default class PokeCard extends Component {
     constructor(props){
         super(props)
-        this.state ={
-            name: this.props.match.params.name
+        this.state = {
+          pokeCard: {}
         }
         this.deleteCard = this.deleteCard.bind(this)
+    }
+
+    componentDidMount() {
+        fetch(pokeURL + this.props.match.params.name)
+          .then( response => response.json()
+          .then( (parsedJson) => {
+            this.setState({
+              pokeCard: parsedJson
+            })
+          }))
     }
     
     deleteCard() {
@@ -60,19 +70,8 @@ export default class PokeCard extends Component {
         .catch(err => console.log(err));
     };
 
-    componentDidMount() {
-        fetch(pokeURL)
-          .then( response => response.json()
-          .then( (parsedJson) => {
-            this.setState({
-              pokeCards: parsedJson
-            })
-          }))
-    }
-
     render() {
-        const pokeName = this.props.match.params.name;
-        const pokeCard = this.props.pokeCards.find(pokeCard => pokeCard.name === pokeName);
+        const pokeCard = this.state.pokeCard;
 
         return (
             <div className="Card">

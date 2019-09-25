@@ -19,8 +19,19 @@ const StyledCardListImage = styled.img`
     text-decoration: none;
     width: auto;
 `
+const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
 export default class PokeCardList extends Component {
+
+    componentDidMount() {
+        fetch(pokeURL)
+          .then( response => response.json()
+          .then( (parsedJson) => {
+            this.setState({
+              pokeCards: parsedJson
+            })
+          }))
+      }
     render() {
         const pokedexView = this.props.pokeCards.map((pokeCard, i) =>(
             <Link to={`/pokeCard/${pokeCard.name}`} key={i}>

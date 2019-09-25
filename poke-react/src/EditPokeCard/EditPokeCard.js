@@ -22,9 +22,13 @@ export default class EditPokeCard extends Component {
     }
 
     componentDidMount() {
-        const pokeName = this.props.match.params.name;
-        const pokeCard = this.props.pokeCards.find(pokeCard => pokeCard.name === pokeName);
-        this.setState({...pokeCard});
+        fetch(pokeURL + this.props.match.params.name)
+          .then( response => response.json()
+          .then( (parsedJson) => {
+            this.setState({
+              ...parsedJson
+            })
+          }))
     }
 
     handleValueChange(evt) {
