@@ -29,17 +29,6 @@ const StyledNav = styled.nav`
   text-shadow: 5px 2px #3359A5;
 `
 
-// const StyledFooter = styled.footer`
-//   align-items: center;
-//   color: white;
-//   display: flex;
-//   height: 100px;
-//   font-size: 10px;
-//   font-weight: lighter;
-//   justify-content: space-around;
-//   text-shadow: 2px 2px 4px #000000;
-// `
-
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
 class App extends Component {

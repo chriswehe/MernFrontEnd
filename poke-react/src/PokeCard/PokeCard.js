@@ -28,12 +28,15 @@ const StyledInfoSection = styled.section`
     font-size: 30px;
     justify-content: center;
     margin: 0 auto;
+    padding: 10px;
     text-shadow: 5px 1px 4px #3359A5;
+    text-align: center;
 `
 
 const StyledInfoKeys = styled.span`
     font-weight: bolder;
 `
+
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
@@ -85,8 +88,12 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
-                        <button onClick={this.deleteCard}>Delete Card</button>
-                        <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>Edit Pokémon</Link>
+                        <Link to="/">
+                            <StyledInfoKeys onClick={this.deleteCard}>Delete Card</StyledInfoKeys>
+                        </Link>
+                        <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>
+                            <StyledInfoKeys>Edit Pokémon</StyledInfoKeys>
+                        </Link>
                     </StyledInfoSection>
                 </StyledCardArticle>
             </div>
