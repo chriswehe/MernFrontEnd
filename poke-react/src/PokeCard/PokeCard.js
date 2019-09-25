@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import styled from 'styled-components';
+import { Link } from "react-router-dom";
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
@@ -86,6 +87,7 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
                         <button onClick={this.deleteCard}>Delete Card</button>
+                        <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>Edit Pokémon</Link>
                     </StyledInfoSection>
                 </StyledCardArticle>
             </div>
