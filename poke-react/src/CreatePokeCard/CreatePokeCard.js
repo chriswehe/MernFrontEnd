@@ -9,10 +9,9 @@ export default class CreatePokeCard extends Component {
         super(props)
         this.state = {
             name:'',
-            nationalPokedexNumber: null,
+            nationalPokedexNumber: '',
             imageUrl: '',
             imageUrlHiRes: '',
-            types: [],
             supertype: '',
             subtype: '',
             number: '',
@@ -31,12 +30,16 @@ export default class CreatePokeCard extends Component {
         })
     }
 
-    submitCard() {
-        console.log("submit")
+    submitCard(evt) {
+        evt.preventDefault()
         fetch(pokeURL, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Connection": "keep-alive",
+                "Cache-Control": "no-cache",
+                "Accept": "*/*",
+                "Host": "kanto-unown-01999.herokuapp.com"
             },
             body: JSON.stringify(this.state)
         }).then(res => console.log(res))
@@ -76,13 +79,6 @@ export default class CreatePokeCard extends Component {
                     value={this.state.imageUrlHiRes}
                     onChange={this.handleValueChange}
                     />
-                    {/* <input 
-                    name="types"
-                    type=""
-                    placeholder="Types"
-                    value={this.state.types}
-                    onChange={this.handleValueChange}
-                    /> */}
                     <input 
                     name="supertype"
                     type="text"

@@ -53,7 +53,7 @@ class App extends Component {
         this.setState({
           pokeCards: parsedJson
         })
-      })).then(console.log(this.state.pokeCards))
+      }))
   }
 
   render () {
