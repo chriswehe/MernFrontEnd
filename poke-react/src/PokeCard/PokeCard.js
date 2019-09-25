@@ -2,17 +2,18 @@ import React, { Component } from 'react'
 import styled from 'styled-components';
 
 const StyledCardArticle = styled.article`
-    background-color: white;
-    border: 7px solid black;
+    background-color: black;
+    border: 7px solid #F9D31C;
     display: flex;
     justify-content: center;
     margin: 0 auto;
+    margin-top: 100px;
     max-width: 700px;
     padding: 40px;
 `
 
 const StyledCardImage = styled.img`
-    box-shadow: 10px 10px 5px black;
+    box-shadow: 10px 10px 5px darkgray;
     max-height: 500px;
     margin: 10px;
     text-decoration: none;
@@ -20,12 +21,13 @@ const StyledCardImage = styled.img`
 `
 
 const StyledInfoSection = styled.section`
-    color: black;
+    color: #F9D31C;
     display: flex;
     flex-direction: column;
+    font-size: 30px;
     justify-content: center;
     margin: 0 auto;
-    text-shadow: 2px 2px 4px grey;
+    text-shadow: 5px 1px 4px #3359A5;
 `
 
 const StyledInfoKeys = styled.span`
@@ -42,8 +44,8 @@ export default class PokeCard extends Component {
                 <StyledCardArticle>
                     <StyledCardImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
                     <StyledInfoSection>
-                        <h2>{pokeCard.name}</h2>
                         <section>
+                            <h2>{pokeCard.name}</h2>
                             <p><StyledInfoKeys>{"Number: "}</StyledInfoKeys>{pokeCard.number}</p>
                             <p><StyledInfoKeys>{"Type: "}</StyledInfoKeys>{pokeCard.supertype}</p>
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>

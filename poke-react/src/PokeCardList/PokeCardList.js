@@ -3,11 +3,13 @@ import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
-  padding: 10px;
+    border: 7px solid #F9D31C;
+    border-top: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 10px;
 `
 
 const StyledCardListImage = styled.img`

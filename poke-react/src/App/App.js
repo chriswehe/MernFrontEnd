@@ -6,39 +6,35 @@ import PokeCard from '../PokeCard/PokeCard'
 import CreatePokeCard from '../CreatePokeCard/CreatePokeCard'
 import PokemonTcgLogo from '../Assets/pokemonTcgLogo.png';
 
-const StyledTcgLogoContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-`
-
 const StyledTcgLogo = styled.img`
   display: block;
-  margin-top: 50px;
-  max-height: 200px;
+  height: 100vh;
+  max-height: 75px;
   width: auto;
 `
 
 const StyledNav = styled.nav`
+  background: black;
+  border: 7px solid #F9D31C;
   align-items: center;
   display: flex;
-  height: 200px;
-  font-size: 50px;
-  justify-content: space-around;
-  margin: 0 10%;
-  text-shadow: 2px 2px 4px #000000;
+  height: 115px;
+  font-size: 25px;
+  justify-content: space-between;
+  padding: 0 50px;
+  text-shadow: 5px 2px #3359A5;
 `
 
-const StyledFooter = styled.footer`
-  align-items: center;
-  color: white;
-  display: flex;
-  height: 100px;
-  font-size: 10px;
-  font-weight: lighter;
-  justify-content: space-around;
-  text-shadow: 2px 2px 4px #000000;
-`
+// const StyledFooter = styled.footer`
+//   align-items: center;
+//   color: white;
+//   display: flex;
+//   height: 100px;
+//   font-size: 10px;
+//   font-weight: lighter;
+//   justify-content: space-around;
+//   text-shadow: 2px 2px 4px #000000;
+// `
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
@@ -63,11 +59,10 @@ class App extends Component {
   render () {
     return (
       <div className="App">
-        <StyledTcgLogoContainer>
-          <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
-        </StyledTcgLogoContainer>
         <StyledNav className="App-navBar">
-          <Link to="/">{"Pokemon Cards"}</Link>
+          <Link to="/">
+            <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
+          </Link>
           <Link to="/createPokeCard/">{"Create New Card"}</Link>
         </StyledNav>
         <main>
@@ -85,9 +80,6 @@ class App extends Component {
             render={props => <PokeCard {...props} {...this.state}/>}
           />
         </main> 
-        <StyledFooter>
-          <h1>{"Created by Chris Wehe and George Caras"}</h1>
-        </StyledFooter> 
       </div>
     );
   }
