@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const StyledCardArticle = styled.article`
     background-color: black;
-    border: 7px solid #F9D31C;
+    border: 3px solid #F9D31C;
     display: flex;
     justify-content: center;
     margin: 53px auto;

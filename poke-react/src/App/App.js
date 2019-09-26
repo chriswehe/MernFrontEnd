@@ -30,6 +30,7 @@ const StyledNav = styled.nav`
   position: sticky;
   text-shadow: 3px 2px #3359A5;
   top: 0;
+  z-index: 10;
 `
 
 const StyledFooter = styled.footer`

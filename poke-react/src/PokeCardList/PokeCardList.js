@@ -18,7 +18,13 @@ const StyledCardListImage = styled.img`
     margin: 10px;
     text-decoration: none;
     width: auto;
+    
+    &:hover{
+        transform:scale(1.1);
+        z-index:1;
+    }
 `
+
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
 export default class PokeCardList extends Component {
@@ -42,7 +48,10 @@ export default class PokeCardList extends Component {
     render() {
         const pokedexView = this.state.pokeCards.map((pokeCard, i) =>(
             <Link to={`/pokeCard/${pokeCard.name}`} key={i}>
-                <StyledCardListImage src={pokeCard.imageUrlHiRes} alt={pokeCard.name}/>
+                <StyledCardListImage 
+                    src={pokeCard.imageUrlHiRes} 
+                    alt={pokeCard.name}
+                />
             </Link>
         ))
         return (
