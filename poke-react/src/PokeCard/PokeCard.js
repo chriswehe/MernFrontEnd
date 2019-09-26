@@ -14,7 +14,7 @@ const StyledCardArticle = styled.article`
 `
 
 const StyledCardImage = styled.img`
-    box-shadow: 10px 10px 5px #3359A5;
+    box-shadow: 10px 10px 5px #262952;
     max-height: 500px;
     margin: 10px;
     text-decoration: none;

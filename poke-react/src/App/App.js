@@ -18,18 +18,34 @@ const StyledTcgLogo = styled.img`
 `
 
 const StyledNav = styled.nav`
-  background: black;
-  border-bottom: 2px solid #F9D31C;
   align-items: center;
+  background: black;
+  border-bottom: 3px solid #F9D31C;
   display: flex;
-  height: 115px;
   font-size: 25px;
+  height: 115px;
   justify-content: space-between;
-  padding: 0 50px;
-  text-shadow: 3px 2px #3359A5;
+  padding: 0 25px;
   position: -webkit-sticky;
   position: sticky;
+  text-shadow: 3px 2px #3359A5;
   top: 0;
+`
+
+const StyledNavClick = styled.div`
+    background: rgb(161,161,161);
+    background: linear-gradient(180deg, 
+                rgba(161,161,161,1) 0%, 
+                rgba(225,21,43,1) 0%, 
+                rgba(149,22,33,1) 53%);
+    border: 4px solid #262952;
+    color: white;
+    font-weight: bolder;
+    margin: 10px;
+    padding: 3px;
+    width: 200px;
+    text-align: center;
+    text-shadow: 1px 1px 1px black;
 `
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
@@ -59,7 +75,11 @@ class App extends Component {
           <Link to="/">
             <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
           </Link>
-          <Link to="/createPokeCard/">{"Create New Card"}</Link>
+          <Link to="/createPokeCard/">
+            <StyledNavClick>
+              {"Create New Card"}
+            </StyledNavClick>
+          </Link>
         </StyledNav>
         <main>
           <Route
