@@ -64,18 +64,23 @@ export default class PokeCard extends Component {
           pokeCard: {}
         }
         this.deleteCard = this.deleteCard.bind(this)
+        this.fetchPokeCard = this.fetchPokeCard.bind(this)
     }
 
     componentDidMount() {
+        this.fetchPokeCard()
+    }
+    
+    fetchPokeCard() {
         fetch(pokeURL + this.props.match.params.name)
           .then( response => response.json()
           .then( (parsedJson) => {
             this.setState({
               pokeCard: parsedJson
             })
-          }))
+        }))
     }
-    
+
     deleteCard() {
         fetch(pokeURL + this.props.match.params.name, {
             method: "DELETE",
@@ -88,6 +93,7 @@ export default class PokeCard extends Component {
             },
         }).then(res => console.log(res))
         .catch(err => console.log(err));
+        this.props.fetchPokemon()
     };
 
     render() {
@@ -105,7 +111,11 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
-                        <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>
+                        <Link 
+                            to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}
+                            // to={{pathname:"/pokeCard/"+pokeCard.name+"/editPokeCard/",
+                            // state:{fetchPokeCard: this.fetchPokeCard}}}
+                            >
                             <StyledChangeKeys>Edit Card</StyledChangeKeys>
                         </Link>
                         <Link to="/">

@@ -68,9 +68,14 @@ class App extends Component {
     this.state = {
       pokeCards: []
     }
+    this.fetchPokemon = this.fetchPokemon.bind(this)
   }
 
   componentDidMount() {
+    this.fetchPokemon();
+  }
+
+  fetchPokemon() {
     fetch(pokeURL)
       .then( response => response.json()
       .then( (parsedJson) => {
@@ -106,7 +111,7 @@ class App extends Component {
           <Route 
             path="/pokeCard/:name"
             exact
-            render={props => <PokeCard {...props} {...this.state}/>}
+            render={props => <PokeCard {...props} {...this.state} fetchPokemon={this.fetchPokemon}/>}
           />
           <Route
             path="/pokeCard/:name/editPokeCard/"

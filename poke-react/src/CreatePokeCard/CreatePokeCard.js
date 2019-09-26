@@ -100,6 +100,7 @@ export default class CreatePokeCard extends Component {
             body: JSON.stringify(this.state)
         }).then(res => console.log(res))
         .catch(err => console.log(err));
+        this.props.location.state.fetchPokeCard()
 }
 
     render() {

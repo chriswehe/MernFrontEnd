@@ -106,6 +106,9 @@ export default class EditPokeCard extends Component {
             body: JSON.stringify(this.state)
         }).then(res => console.log(res))
         .catch(err => console.log(err));
+        // this.props.location.state.fetchPokeCard()
+        //the line above is an attempt to make our pokecard re-fetch 
+        //it's pokecard
     }
 
     render() {
