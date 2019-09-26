@@ -60,30 +60,30 @@ const StyledNavClick = styled.div`
     text-shadow: 1px 1px 1px black;
 `
 
-const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
+// const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 
 class App extends Component {
-  constructor(props){
-    super(props)
-    this.state = {
-      pokeCards: []
-    }
-    this.fetchPokemon = this.fetchPokemon.bind(this)
-  }
+  // constructor(props){
+  //   super(props)
+  //   this.state = {
+  //     pokeCards: []
+  //   }
+  //   this.fetchPokemon = this.fetchPokemon.bind(this)
+  // }
 
-  componentDidMount() {
-    this.fetchPokemon();
-  }
+  // componentDidMount() {
+  //   this.fetchPokemon();
+  // }
 
-  fetchPokemon() {
-    fetch(pokeURL)
-      .then( response => response.json()
-      .then( (parsedJson) => {
-        this.setState({
-          pokeCards: parsedJson
-        })
-      }))
-  }
+  // fetchPokemon() {
+  //   fetch(pokeURL)
+  //     .then( response => response.json()
+  //     .then( (parsedJson) => {
+  //       this.setState({
+  //         pokeCards: parsedJson
+  //       })
+  //     }))
+  // }
 
   render () {
     return (
