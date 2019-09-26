@@ -20,7 +20,7 @@ const StyledCardListImage = styled.img`
     width: auto;
     
     &:hover{
-        transform:scale(1.1);
+        transform:scale(1.07);
         z-index:1;
     }
 `
