@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
-import PokeCard from '../PokeCard/PokeCard'
+import PokeCardList from '../PokeCardList/PokeCardList'
 
 const wrapperFunction = connect()
-const NewPokeCard = wrapperFunction(PokeCard)
+const NewPokeCardList = wrapperFunction(PokeCardList)
 
-export default NewPokeCard
+export default NewPokeCardList

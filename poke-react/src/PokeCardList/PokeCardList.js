@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { Link } from "react-router-dom";
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
@@ -24,38 +23,15 @@ const StyledCardListImage = styled.img`
         z-index:1;
     }
 `
-
-const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
-
 export default class PokeCardList extends Component {
-    constructor(props){
-        super(props)
-        this.state = {
-          pokeCards: []
-        }
-    }
-
-    componentDidMount() {
-        fetch(pokeURL)
-          .then( response => response.json()
-          .then( (parsedJson) => {
-            this.setState({
-              pokeCards: parsedJson
-            })
-          }))
-    }
-
     render() {
-        const pokedexView = this.state.pokeCards.map((pokeCard, i) =>(
-            <Link to={`/pokeCard/${pokeCard.name}`} key={i}>
-                <StyledCardListImage 
-                    src={pokeCard.imageUrlHiRes} 
-                    alt={pokeCard.name}
-                />
-            </Link>
-        ))
+        // const pokedexView = this.state.pokeCards.map((pokeCard, i) =>())
         return (
-            <StyledDiv>{pokedexView}</StyledDiv>
+            // <StyledDiv>{pokedexView}</StyledDiv>
+            <StyledCardListImage 
+                    src={''} 
+                    alt={''}
+                />
         )
     }
 }

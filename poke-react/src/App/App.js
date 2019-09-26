@@ -4,9 +4,6 @@ import { Route, Link } from "react-router-dom";
 import styled from 'styled-components';
 //Import Components 
 import PokeCardList from '../PokeCardList/PokeCardList'
-import PokeCard from '../PokeCard/PokeCard'
-import CreatePokeCard from '../CreatePokeCard/CreatePokeCard'
-import EditPokeCard from '../EditPokeCard/EditPokeCard'
 //Import Assets
 import PokemonTcgLogo from '../Assets/pokemonTcgLogo.png';
 
@@ -60,63 +57,16 @@ const StyledNavClick = styled.div`
     text-shadow: 1px 1px 1px black;
 `
 
-// const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
-
 class App extends Component {
-  // constructor(props){
-  //   super(props)
-  //   this.state = {
-  //     pokeCards: []
-  //   }
-  //   this.fetchPokemon = this.fetchPokemon.bind(this)
-  // }
-
-  // componentDidMount() {
-  //   this.fetchPokemon();
-  // }
-
-  // fetchPokemon() {
-  //   fetch(pokeURL)
-  //     .then( response => response.json()
-  //     .then( (parsedJson) => {
-  //       this.setState({
-  //         pokeCards: parsedJson
-  //       })
-  //     }))
-  // }
 
   render () {
     return (
       <div className="App">
         <StyledNav className="App-navBar">
-          <Link to="/">
             <StyledTcgLogo src={PokemonTcgLogo} alt="Logo"/>
-          </Link>
-          <Link to="/createPokeCard/">
-            <StyledNavClick>
-              {"Create New Card"}
-            </StyledNavClick>
-          </Link>
         </StyledNav>
         <main>
-          <Route
-            path="/createPokeCard/"
-            render={props => <CreatePokeCard {...props}/>}
-          />
-          <Route
-            path="/"
-            exact
-            render={props => <PokeCardList {...props} {...this.state}/>}
-          />
-          <Route 
-            path="/pokeCard/:name"
-            exact
-            render={props => <PokeCard {...props} {...this.state} fetchPokemon={this.fetchPokemon}/>}
-          />
-          <Route
-            path="/pokeCard/:name/editPokeCard/"
-            render={props => <EditPokeCard {...props} {...this.state}/>}
-          />
+          <PokeCardList/>
         </main> 
         <StyledFooter></StyledFooter>
       </div>
