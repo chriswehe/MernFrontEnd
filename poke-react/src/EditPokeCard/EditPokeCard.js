@@ -8,8 +8,7 @@ const StyledEditArticle = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 48px auto;
     max-width: 700px;
     padding: 40px;
 `
@@ -94,8 +93,7 @@ export default class EditPokeCard extends Component {
         })
     }
 
-    updateCard(evt) {
-        evt.preventDefault()
+    updateCard() {
         fetch(pokeURL + this.props.match.params.name, {
             method: "PUT",
             headers:{
@@ -179,7 +177,7 @@ export default class EditPokeCard extends Component {
                         value={this.state.rarity}
                         onChange={this.handleValueChange}
                         />
-                        <Link to={"/"}>
+                        <Link to={`/pokeCard/${this.state.name}`}>
                             <StyledUpdateClick onClick={this.updateCard}>
                                 Submit
                             </StyledUpdateClick>

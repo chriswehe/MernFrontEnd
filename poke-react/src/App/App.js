@@ -32,6 +32,17 @@ const StyledNav = styled.nav`
   top: 0;
 `
 
+const StyledFooter = styled.footer`
+  align-items: center;
+  background: black;
+  border-top: 3px solid #F9D31C;
+  display: flex;
+  font-size: 25px;
+  height: 115px;
+  justify-content: space-between;
+  text-shadow: 3px 2px #3359A5;
+`
+
 const StyledNavClick = styled.div`
     background: rgb(161,161,161);
     background: linear-gradient(180deg, 
@@ -101,6 +112,7 @@ class App extends Component {
             render={props => <EditPokeCard {...props} {...this.state}/>}
           />
         </main> 
+        <StyledFooter></StyledFooter>
       </div>
     );
   }

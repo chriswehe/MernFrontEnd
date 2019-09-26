@@ -1,5 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
+
 
 const pokeURL = "https://kanto-unown-01999.herokuapp.com/";
 //We should have the url in App.js and this url come from
@@ -11,8 +14,7 @@ const StyledEditArticle = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 48px auto;
     max-width: 700px;
     padding: 40px;
 `
@@ -85,8 +87,7 @@ export default class CreatePokeCard extends Component {
         })
     }
 
-    submitCard(evt) {
-        evt.preventDefault()
+    submitCard() {
         fetch(pokeURL, {
             method: "POST",
             headers: {
@@ -170,9 +171,11 @@ export default class CreatePokeCard extends Component {
                         value={this.state.rarity}
                         onChange={this.handleValueChange}
                         />
-                        <StyledSubmitClick onClick={this.submitCard}>
-                            Submit Card
-                        </StyledSubmitClick>
+                        <Link to={'/'}>
+                            <StyledSubmitClick onClick={this.submitCard}>
+                                Submit Card
+                            </StyledSubmitClick>
+                        </Link>
                     </StyledForm>
                 </StyledEditArticle>
             </div>

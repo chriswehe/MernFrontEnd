@@ -7,8 +7,7 @@ const StyledCardArticle = styled.article`
     border: 7px solid #F9D31C;
     display: flex;
     justify-content: center;
-    margin: 0 auto;
-    margin-top: 100px;
+    margin: 53px auto;
     max-width: 800px;
     padding: 20px;
 `
@@ -106,11 +105,11 @@ export default class PokeCard extends Component {
                             <p><StyledInfoKeys>{"Rarity: "}</StyledInfoKeys>{pokeCard.rarity}</p>
                             <p><StyledInfoKeys>{"Artist: "}</StyledInfoKeys>{pokeCard.artist}</p>
                         </section>
-                        <Link to="/">
-                            <StyledChangeKeys onClick={this.deleteCard}>Delete Card</StyledChangeKeys>
-                        </Link>
                         <Link to={"/pokeCard/"+pokeCard.name+"/editPokeCard/"}>
                             <StyledChangeKeys>Edit Card</StyledChangeKeys>
+                        </Link>
+                        <Link to="/">
+                            <StyledChangeKeys onClick={this.deleteCard}>Delete Card</StyledChangeKeys>
                         </Link>
                     </StyledInfoSection>
                 </StyledCardArticle>
