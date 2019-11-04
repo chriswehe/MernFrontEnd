@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
 const StyledCardArticle = styled.article`
+    align-items: center;
     background-color: black;
     border: 3px solid #F9D31C;
     display: flex;
@@ -10,14 +11,26 @@ const StyledCardArticle = styled.article`
     margin: 53px auto;
     max-width: 800px;
     padding: 20px;
+    @media (max-width: 710px) {
+    flex-direction: column
+  }
+  @media (max-width: 400px) {
+    max-width: 320px;
+    padding: 0px;
+  }
 `
 
 const StyledCardImage = styled.img`
     box-shadow: 10px 10px 5px #262952;
     max-height: 500px;
+    max-width: 363.63px;
     margin: 10px;
     text-decoration: none;
     width: auto;
+    @media (max-width: 420px) {
+    max-height: 300px;
+    max-width: 363.63px;
+  }
 `
 
 const StyledInfoSection = styled.section`
