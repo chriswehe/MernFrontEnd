@@ -31,7 +31,7 @@ const StyledNav = styled.nav`
   text-shadow: 3px 2px #3359A5;
   top: 0;
   z-index: 10;
-  @media (max-width: 400px) {
+  @media (max-width: 420px) {
     flex-direction: column;
     height: 150px;
   }

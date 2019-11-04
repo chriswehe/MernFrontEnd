@@ -17,6 +17,7 @@ const StyledCardArticle = styled.article`
   @media (max-width: 400px) {
     max-width: 320px;
     padding: 0px;
+    padding-top: 20px;
   }
 `
 
